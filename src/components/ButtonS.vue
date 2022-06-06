@@ -20,10 +20,13 @@ export default {
   width:149px;
    text-transform:none;
   height:45px;
+  background-color:white;
+  letter-spacing:0px;
 }
 #btn2{
   width:188px;
   text-transform:none;
   height:45px;
+  letter-spacing:0px;
 }
 </style>
