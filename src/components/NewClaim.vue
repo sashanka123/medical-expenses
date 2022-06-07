@@ -14,11 +14,16 @@
           <v-divider vertical class="my-2"></v-divider>
           <span class="new ma-3"><b>NEW CLAIM</b></span>
           <v-spacer></v-spacer>
-          <span class="ma-3 teal--text">HIDE DETAILS</span>
+          <span class="ma-3 teal--text" @click="change" v-if="val == true"
+            >HIDE DETAILS</span
+          >
+          <span class="ma-3 teal--text" @click="change" v-if="val == false"
+            >SHOW DETAILS</span
+          >
         </div>
       </v-card>
       <v-divider></v-divider>
-      <v-card color="#10242B0D" class="rounded-0" elevation="0">
+      <v-card color="#10242B0D" class="rounded-0" elevation="0" v-show="val">
         <v-layout class="mx-4">
           <v-flex class="sm2">
             <p class="subtitle-2">Claim Number</p>
@@ -89,8 +94,18 @@
 <script>
 import MedicalExp from "./MedicalExp.vue";
 export default {
+  data() {
+    return {
+      val: true,
+    };
+  },
   components: {
     MedicalExp,
+  },
+  methods: {
+    change() {
+      this.val = !this.val;
+    },
   },
 };
 </script>
